@@ -1,0 +1,12 @@
+html {
+	margin: 0;
+	padding: 0;
+	background: #eee9df url(../img/background.jpg) center top no-repeat;
+}
+
+body {
+	width: 940px;
+	margin: 50px auto;
+	background: rgba(236,242,179,0.9);
+	font: 10pt/1.5em Helvetica,"Helvetica neue", Arial, sans-serif;
+}
