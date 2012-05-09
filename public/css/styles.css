@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,700,700italic|Fredericka+the+Great|Ribeye+Marrow);
+
 html {
 	margin: 0;
 	padding: 0;
@@ -7,6 +9,27 @@ html {
 body {
 	width: 940px;
 	margin: 50px auto;
-	background: rgba(236,242,179,0.9);
+	background: rgba(255,250,100,1.0);
 	font: 10pt/1.5em Helvetica,"Helvetica neue", Arial, sans-serif;
 }
+
+nav ul li {
+/* font-family: 'Cabin', sans-serif; */
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 36px;
+    color: red;
+    /* font-family: 'Ribeye Marrow', cursive; */
+	
+}
+/* LOGO */
+header h1 { padding-top: 0px;padding-bottom: 20px; padding-left: 0px; background: white; margin: 0px;}
+#title { margin-top: -50px; margin-left: 100px;}
+#title a {text-decoration: none; font-family: 'Ribeye Marrow'; font-weight: 500; font-size: 48px; color: red; }
+/* MENU STYLING */
+#menu { margin:10px 0 0 10px; }
+#menu ul { list-style:none; }
+#menu ul li { display:inline; float:left; margin-bottom:0px; padding:10px; padding-left: 50px;}
+#menu ul li a:hover {font-weight: bold;}
+
+/* Content */
+#content {margin-top: 70px;}

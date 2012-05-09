@@ -10,11 +10,22 @@
     %link{ :href => "/css/styles.css", :media => "screen", :rel => "stylesheet" }
   %body
     %header
-      %nav
+      %h1 
+        %img{ :src => "/img/sunflower.jpg"}
+        #title
+          %a{ :href => "/"} La Cala Catering
+      %nav#menu
         %ul
-          %li= "Menu Item"
+          %li 
+            %a Services
+          %li
+            %a Food
+          %li
+            %a Menus
+          %li
+            %a About
 
-    %section
+    #content
       =yield    
       
     %footer
