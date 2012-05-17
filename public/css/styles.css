@@ -3,33 +3,34 @@
 html {
 	margin: 0;
 	padding: 0;
-	background: #eee9df url(../img/background.jpg) center top no-repeat;
+	background: white center top no-repeat;
 }
 
 body {
 	width: 940px;
 	margin: 50px auto;
-	background: rgba(255,250,100,1.0);
+	
 	font: 10pt/1.5em Helvetica,"Helvetica neue", Arial, sans-serif;
 }
 
-nav ul li {
-/* font-family: 'Cabin', sans-serif; */
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 36px;
-    color: red;
-    /* font-family: 'Ribeye Marrow', cursive; */
-	
-}
+
+
 /* LOGO */
-header h1 { padding-top: 0px;padding-bottom: 20px; padding-left: 0px; background: white; margin: 0px;}
+header h1 { padding-top: 0px;padding-bottom: 8px; padding-left: 0px; margin: 0px;}
 #title { margin-top: -50px; margin-left: 100px;}
 #title a {text-decoration: none; font-family: 'Ribeye Marrow'; font-weight: 500; font-size: 48px; color: red; }
 /* MENU STYLING */
-#menu { margin:10px 0 0 10px; }
+#menu { display:block;margin:0px; background: rgba(255,250,100,1.0); height: 50px; }
 #menu ul { list-style:none; }
-#menu ul li { display:inline; float:left; margin-bottom:0px; padding:10px; padding-left: 50px;}
-#menu ul li a:hover {font-weight: bold;}
+#menu ul li { display:inline; 
+    float:left; 
+    margin-bottom:0px; 
+    padding:10px; padding-left: 50px; 
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 36px;
+    color: red;
+    }
+#menu ul li a:hover {color: black;}
 
 /* Content */
 #content {margin-top: 70px;}

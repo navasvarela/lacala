@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'haml'
+require 'sequel'
 
 class MyApp < Sinatra::Application
 	enable :sessions
