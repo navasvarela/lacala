@@ -1,0 +1,17 @@
+// This should be wrapped on a div
+%h3 
+  & Edit #{page.title}  
+%form{:action => '/admin/pages', :method => 'post' }
+  %fieldset
+    %ol
+      %li
+        %label{:for => 'title'} Title
+        %input{:type => 'text', :name => 'title'}
+      %li
+        %label{:for => 'section'} Section
+        %input{:type => 'text', :name => 'section'}
+      %li
+        %label{:for => 'text'} Text
+        %textarea{:name => 'text'}
+      %li
+        %input{:type => "submit", :value => "Send", :class => "button"}

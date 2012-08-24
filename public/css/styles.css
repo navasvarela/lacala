@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,700,700italic|Fredericka+the+Great|Ribeye+Marrow);
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,500,700,700italic|Fredericka+the+Great|Ribeye+Marrow|Rosario);
 
 html {
 	margin: 0;
@@ -8,9 +8,8 @@ html {
 
 body {
 	width: 940px;
-	margin: 50px auto;
-	
-	font: 10pt/1.5em Helvetica,"Helvetica neue", Arial, sans-serif;
+	margin: 50px auto;	
+	font: 10pt/1.5em  'Rosario',Arial, sans-serif;
 }
 
 

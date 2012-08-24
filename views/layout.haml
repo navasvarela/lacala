@@ -17,13 +17,15 @@
     #menu
       %ul
         %li 
-          %a Services
+          %a{ :href => "/"} Home
+        %li 
+          %a{ :href => "/pages/Services"} Services
         %li
-          %a Food
+          %a{ :href => "/pages/Food"} Food
         %li
-          %a Menus
+          %a{ :href => "/pages/Menus"} Menus
         %li
-          %a About
+          %a{ :href => "/pages/About"} About
 
     #content
       =yield    

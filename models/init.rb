@@ -1,3 +1,5 @@
+require_relative 'seed_pages'
+
 DB = Sequel.connect('sqlite://lacala.db')
 
 # Creates table pages if it doesn't exists already
@@ -20,8 +22,9 @@ end
 DB.create_table? :menuitems do
   primary_key :id
   foreign_key :menu_id, :menus
+  foreign_key :dish_id, :dishes
   String :description
-  String :
+  String :name
   String :image_file
 end
 
@@ -32,4 +35,23 @@ DB.create_table? :dishes do
   String :title
   String :text
   String :image_file
+  String :price
 end
+
+class Page < Sequel::Model
+end
+
+class Menu < Sequel::Model
+	one_to_many :menuitems
+end
+
+class MenuItem < Sequel::Model
+	many_to_one :menu
+end
+
+class Dish < Sequel::Model
+end
+
+if DB[:pages].empty?
+  seed_pages DB[:pages]
+end  

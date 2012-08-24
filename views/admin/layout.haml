@@ -1,0 +1,31 @@
+!!! 5
+%html
+  %head
+    %title= "La Cala Catering - Admin"
+    != css :admin
+    != js :admin
+    %meta{ :content => "La Cala Catering is a catering company based in Romsey, run by 2011 Masterchef finalist Anneliese Kiely. It specialises in Spanish food", :name => "description" }   
+    %meta{ :content => "3 days", :name => "revisit-after" }
+    
+  %body
+    %header
+      %h1 
+        %img{ :src => "/img/sunflower.jpg"}
+        #title
+          %a{ :href => "/"} La Cala Catering - Admin
+    #menu
+      %ul
+        %li 
+          %a Pages
+        %li
+          %a Menus
+        %li
+          %a Dishes
+       
+
+    #content
+      =yield    
+      
+    %footer
+      %p
+        Copyright 2012 La Cala Catering. All rights reserved.
