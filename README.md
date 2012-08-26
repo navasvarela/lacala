@@ -1,4 +1,4 @@
 lacala
 ======
 
-La Cala Catering website
+La Cala Catering website. Experimenting with Sinatra.
