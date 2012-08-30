@@ -31,8 +31,18 @@ var PagesRouter = Backbone.Router.extend({
 });
 
 var PageView = Backbone.View.extend({
-  template : _.template('<tr><td><%= id %></td><td><%= title %></td><td><button class="btn btn-small btn-primary"'
-  +' type="button">Edit</button></td><td><button class="btn btn-small" type="button">View</button></td></tr>'),
+  template : _.template('<tr><td><%= id %></td><td><%= title %></td><td><button data-id="<%= id %>" class="btn btn-small btn-primary edit-button"'
+  +' type="button">Edit</button></td><td><button data-id="<%= id %>" class="btn btn-small view-button" type="button">View</button></td></tr>'),
+  events: {
+    "click button.view-button" : "view",
+    "click button.edit-button" : "edit"
+  },
+  view: function(e) {
+    console.log("view event triggered - "+$(e.currentTarget).data("id"));
+  },
+  edit: function(e) {
+    console.log("edit event triggered - "+$(e.currentTarget).data("id"));
+  },
   render : function() {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
