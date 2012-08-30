@@ -8,5 +8,7 @@ body {
     font: 10pt/1.5em  Arial, sans-serif;
 }
 
+[aria-hidden=true] {visibility:hidden;}
+
 #title { margin-top: -50px; margin-left: 100px;}
 #title a {text-decoration: none; font-family: 'Ribeye Marrow'; font-weight: 500; font-size: 48px; color: red; }

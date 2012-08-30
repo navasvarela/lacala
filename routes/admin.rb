@@ -14,7 +14,9 @@ get '/admin/pages' do
   @pages.to_json
 end
 
-post '/admin/pages/:id' do
+put '/admin/pages/:id' do
+  page = Page.new
+  page.from_json response.body
   
 end
 
