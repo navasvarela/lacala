@@ -8,24 +8,27 @@
     %meta{ :content => "3 days", :name => "revisit-after" }
     
   %body
-    %header
-      %h1 
-        %img{ :src => "/img/sunflower.jpg"}
-        #title
-          %a{ :href => "/"} La Cala Catering - Admin
-    #menu
-      %ul{:class => "nav nav-tabs"}
-        %li 
-          %a Pages
-        %li
-          %a Menus
-        %li
-          %a Dishes
+    .container
+      %header
+        %h1 
+          %img{ :src => "/img/sunflower.jpg"}
+          #title
+            %a{ :href => "/admin"} La Cala Catering - Admin
+      #menu
+        %ul{:class => "nav nav-tabs"}
+          %li{:class =>"active"} 
+            %a{:href => "#"} Pages
+              
+                
+          %li
+            %a Menus
+          %li
+            %a Dishes
        
 
-    #content
-      =yield    
+      #content
+        =yield    
       
-    %footer
-      %p
-        Copyright 2012 La Cala Catering. All rights reserved.
+      %footer
+        %p
+          Copyright 2012 La Cala Catering. All rights reserved.

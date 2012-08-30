@@ -32,15 +32,21 @@ assets {
 
   # The second parameter defines where the compressed version will be served.
   # (Note: that parameter is optional, AssetPack will figure it out.)
-  js :app, '/js/app.js', [
-      '/bootstrap/js/bootstrap.min.js',
-      '/js/*.js'
-    ]
+  base_libs = [
+    '/js/lib/jquery.js',
+    '/js/lib/underscore.js',
+    '/js/lib/backbone.js',
+    '/js/lib/backbone-forms.js',
+    '/bootstrap/js/bootstrap.min.js']
 
-  js :admin, '/js/admin.js', [
-       '/bootstrap/js/bootstrap.min.js',
-        '/js/*.js'
-    ]
+  js :app, '/js/app.js', base_libs.concat([
+      '/js/*.js'
+    ])
+
+  js :admin, '/js/admin.js', base_libs.concat([
+      '/js/admin/*.js'
+    ])
+        
 
   css :app, '/css/app.css', [
       '/css/style.css'
