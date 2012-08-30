@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin:400,500,700,700italic|Fredericka+the+Great|Ribeye+Marrow|Rosario);
+@import url(css/lato.css);
 
 html {
 	margin: 0;
@@ -9,7 +10,7 @@ html {
 body {
 	width: 940px;
 	margin: 50px auto;	
-	font: 10pt/1.5em  'Rosario',Arial, sans-serif;
+	font: 14px/27px 'LatoRegular', Arial, sans-serif;
 }
 
 

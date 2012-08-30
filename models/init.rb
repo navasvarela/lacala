@@ -38,18 +38,23 @@ DB.create_table? :dishes do
   String :price
 end
 
+
 class Page < Sequel::Model
+  plugin :json_serializer
 end
 
 class Menu < Sequel::Model
 	one_to_many :menuitems
+	plugin :json_serializer
 end
 
 class MenuItem < Sequel::Model
 	many_to_one :menu
+	plugin :json_serializer
 end
 
 class Dish < Sequel::Model
+  plugin :json_serializer
 end
 
 if DB[:pages].empty?

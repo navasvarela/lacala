@@ -9,6 +9,7 @@ gem "sequel"
 gem "sqlite3"
 gem "rack-flash3"
 gem "thin"
+gem "json"
 
 group :test do
 	    gem 'rspec'

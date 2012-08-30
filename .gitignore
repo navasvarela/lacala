@@ -1,2 +1,4 @@
 *.db
 .redcar
+webrat.log
+/coverage

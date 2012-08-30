@@ -1,0 +1,11 @@
+html {
+    margin: 0;
+    padding: 0;
+    background: white center top no-repeat;
+}
+
+body {
+    width: 940px;
+    margin: 50px auto;  
+    font: 10pt/1.5em  Arial, sans-serif;
+}

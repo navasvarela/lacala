@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/assetpack'
 require 'haml'
 require 'sequel'
+require 'json'
 require 'sinatra/support'
 require 'sinatra/reloader'
 
