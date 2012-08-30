@@ -1,3 +1,0 @@
-var Quote = new function() {
-  
-};

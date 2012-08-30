@@ -17,4 +17,5 @@ group :test do
 	    gem 'webrat'
 	    gem 'simplecov', :require => false
 	    gem 'jasmine'
+	    gem 'headless'
 end

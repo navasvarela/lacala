@@ -10,6 +10,7 @@ GEM
     eventmachine (0.12.10)
     ffi (1.1.5)
     haml (3.1.7)
+    headless (0.3.1)
     jasmine (1.2.1)
       jasmine-core (>= 1.2.0)
       rack (~> 1.0)
@@ -84,6 +85,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  headless
   jasmine
   json
   rack-flash3

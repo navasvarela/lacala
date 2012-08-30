@@ -14,7 +14,7 @@ get '/admin/pages' do
   @pages.map{|page| page.to_json}.to_json
 end
 
-post '/admin/pages' do
+post '/admin/pages/:id' do
 
 end
 
