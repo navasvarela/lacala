@@ -1,5 +1,8 @@
 require_relative 'seed_pages'
 
+# Add json serializer plugin to all models
+Sequel::Model.plugin :json_serializer
+
 DB = Sequel.connect('sqlite://lacala.db')
 
 # Creates table pages if it doesn't exists already
@@ -38,24 +41,35 @@ DB.create_table? :dishes do
   String :price
 end
 
+# Custom module
+# JSON serializer does not parse very well JSON, for instance
+
+module JSONParser 
+  def parse_json(json)
+    JSON.parse(json).each { | key,value| self[key] = value }
+  end
+end
+
+Sequel::Model.include JSONParser
 
 class Page < Sequel::Model
-  plugin :json_serializer
+  
 end
 
 class Menu < Sequel::Model
 	one_to_many :menuitems
-	plugin :json_serializer
+	
 end
 
 class MenuItem < Sequel::Model
 	many_to_one :menu
-	plugin :json_serializer
+	
 end
 
 class Dish < Sequel::Model
   plugin :json_serializer
 end
+
 
 if DB[:pages].empty?
   seed_pages DB[:pages]

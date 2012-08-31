@@ -15,8 +15,12 @@ get '/admin/pages' do
 end
 
 put '/admin/pages/:id' do
-  page = Page.new
-  page.from_json response.body
+  payload = request.body.read
+  logger.info "Received JSON for #{params[:id]}: #{payload}"
+  page = Page[params[:id]]
+  logger.info "Attempting to update #{page.to_json}"
+  page.parse_json payload
+  page.save_changes
   
 end
 
