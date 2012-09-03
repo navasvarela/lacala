@@ -1,4 +1,5 @@
 require_relative 'seed_pages'
+require_relative 'seed_dishes'
 
 # Add json serializer plugin to all models
 Sequel::Model.plugin :json_serializer
@@ -42,7 +43,7 @@ DB.create_table? :dishes do
 end
 
 # Custom module
-# JSON serializer does not parse very well JSON, for instance
+# JSON serializer does not parse very well JSON
 
 module JSONParser 
   def parse_json(json)
@@ -63,14 +64,18 @@ end
 
 class MenuItem < Sequel::Model
 	many_to_one :menu
-	
+	one_to_one :dishes
 end
 
 class Dish < Sequel::Model
-  plugin :json_serializer
+  
 end
 
 
 if DB[:pages].empty?
   seed_pages DB[:pages]
 end  
+
+if DB[:dishes].empty?
+  seed_dishes DB[:dishes]
+end

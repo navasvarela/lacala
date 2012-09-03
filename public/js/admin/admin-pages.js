@@ -6,16 +6,7 @@ var PageList = Backbone.Collection.extend({
   url : '/admin/pages'
 });
 
-var PagesRouter = Backbone.Router.extend({
-  routes : {
-    "pages/:id" : "getPage"
-  },
 
-  getPage : function(id) {
-    console.log('Retrieve page with ID: ' + id);
-    var page = Pages.get(id);
-  }
-});
 
 var PageView = Backbone.View.extend({
   template : _.template('<tr><td><%= id %></td><td><%= title %></td><td><button data-id="<%= id %>" class="btn btn-small btn-primary edit-button"' + ' type="button">Edit</button></td><td><button data-id="<%= id %>" class="btn btn-small view-button" type="button">View</button></td></tr>'),

@@ -37,7 +37,8 @@ assets {
     '/js/lib/underscore.js',
     '/js/lib/backbone.js',
     '/js/lib/backbone-forms.js',
-    '/bootstrap/js/bootstrap.min.js']
+    '/bootstrap/js/bootstrap.min.js',
+    '/js/lib/handlebars.js']
 
   js :app, '/js/app.js', base_libs.concat([
       '/js/*.js'
