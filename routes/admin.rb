@@ -21,17 +21,13 @@ class LaCalaAdminApp < Sinatra::Base
       '/bootstrap/js/bootstrap.min.js',
       '/js/lib/handlebars.js']
 
-    js :app, '/js/app.js', base_libs.concat([
-      '/js/*.js'
-    ])
+   
 
     js :admin, '/js/admin.js', base_libs.concat([
       '/js/admin/*.js'
     ])
 
-    css :app, '/css/app.css', [
-      '/css/styles.css'
-    ]
+    
 
     css :admin, '/css/adm.css', [
       '/css/admin.css',

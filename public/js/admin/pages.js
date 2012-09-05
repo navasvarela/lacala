@@ -23,7 +23,7 @@ var PageListView = Backbone.View.extend({
     this.collection.bind("reset", this.render, this);
     this.collection.bind("change", this.render, this);
     this.el = options.el;
-    var self = this
+    var self = this;
     this.collection.fetch({
       success : function() {
         self.render();

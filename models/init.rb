@@ -37,6 +37,7 @@ DB.create_table? :dishes do
   primary_key :id
   String :section
   String :title
+  String :short_desc
   String :text
   String :image_file
   String :price
