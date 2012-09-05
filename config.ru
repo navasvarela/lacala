@@ -1,2 +1,9 @@
 require './app'
-run Sinatra::Application
+
+map '/' do
+  run LaCalaMainApp
+end
+
+map '/admin' do
+  run LaCalaAdminApp
+end

@@ -18,7 +18,7 @@ cooking and two that I do not want a career on TV.</p>
 
 <h1>Markets and Festivals</h1>
 
-<p align="center"><img src="images/stall-food-panorama.jpg" alt="My Market Stall" width="900" /></p>
+<p align="center"><img src="/img/stall-food-panorama.jpg" alt="My Market Stall" width="900" /></p>
 
 <p>When I can fit it in I have a stall on the Winchester Market (<a href="http://
 www.visitwinchester.co.uk/site/whats-on/markets">http://
@@ -35,4 +35,6 @@ have regular customers to whom I deliver fortnightly meals to stock up their fre
     <p id=\'contact\' style=\'text-align: center;\'>01794516997</p>
     <p id=\'contact\' style=\'text-align: center;\'>Mobile: 07975995753</p>
     <p id=\'contact\' style=\'text-align: center;\'>info@lacalacatering.com</p>')
+  
+  dataset.insert(:title => 'Food', :text => '<p> This is the food page </p>')
 end

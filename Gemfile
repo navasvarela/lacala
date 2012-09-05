@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 gem "sinatra"
+gem "sinatra-base", :require => 'sinatra/base'
 gem "sinatra-contrib", :require => 'sinatra/contrib'
 gem "sinatra-support", :require => 'sinatra/support'
 gem "sinatra-assetpack", :require => 'sinatra/assetpack'

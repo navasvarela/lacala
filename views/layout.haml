@@ -1,31 +1,43 @@
 !!! 5
 %html
+   
   %head
     %title= "La Cala Catering"
-    %meta{ :content => "", :name => "description" }
-    %meta{ :content => "", :name => "author" }
+    %meta{ :charset => 'utf-8'}
+    %meta{'http-equiv' => 'content-type', :content => "text/html;charset=UTF-8"}
+    %meta{ :content => "Catering company based in Romsey, Hampshire, UK. Specialises in catering Spanish food and Spanish inspired food for all sort of events. Run by Masterchef 2011 finalist Anneliese Kiely", :name => "description" }
+    -# Facebook stuff   
     %meta{ :content => "3 days", :name => "revisit-after" }
-   
-    %link{ :href => "/feed", :rel => "alternate", :title => "Atom", :type => "application/atom+xml" }
-    %link{ :href => "/css/styles.css", :media => "screen", :rel => "stylesheet" }
+    %meta{:property=>"og:title" ,:content=>"La Cala Catering" }
+    %meta{:property=>"og:type", :content=>"website" }
+    %meta{ :property=>"og:url", :content=>"http://www.lacalacatering.com" }
+    %meta{:property=>"og:image", :content=>"" }
+    %meta{ :property=>"og:site_name", :content=>""}
+    %meta{:property=>"fb:admins", :content=>"100003075374410"}
+          
+    %link{:rel=>"SHORTCUT ICON", :href=>"http://www.lacalacatering.com/favicon.ico"}
+    != css :app
+    != js :app
   %body
     %header
       %h1 
-        %img{ :src => "/img/sunflower.jpg"}
-        #title
+        .logo
           %a{ :href => "/"} La Cala Catering
-    #menu
+      %iframe{:src=>"http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.lacalacatering.com&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80",
+       :scrolling=>"no", :frameborder=>"0",
+       :style=>"border:none; overflow:hidden; width:240px; height:40px; float:right; margin-top: -160px;" ,:allowTransparency=>"true"}
+    #menu{:class => 'menu'}
       %ul
         %li 
           %a{ :href => "/"} Home
-        %li 
-          %a{ :href => "/pages/Services"} Services
         %li
           %a{ :href => "/pages/Food"} Food
-        %li
-          %a{ :href => "/pages/Menus"} Menus
+       
         %li
           %a{ :href => "/pages/About"} About
+        %li
+          %a{ :href => "/pages/Contact"} Contact
+          
 
     #content
       =yield    
