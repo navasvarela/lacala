@@ -24,6 +24,7 @@ class LaCalaAdminApp < Sinatra::Base
    
 
     js :admin, '/js/admin.js', base_libs.concat([
+      '/js/admin/templates.js',
       '/js/admin/*.js'
     ])
 

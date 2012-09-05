@@ -4,6 +4,6 @@ map '/' do
   run LaCalaMainApp
 end
 
-map '/admin' do
+map '/admin/' do
   run LaCalaAdminApp
 end

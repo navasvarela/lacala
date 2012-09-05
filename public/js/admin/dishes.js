@@ -45,15 +45,15 @@ var DishListView = Backbone.View.extend({
     var id = $(e.currentTarget).data("id");
     console.log("view event triggered - " + id);
     var model = this.collection.get(id);
-    this.el.append("<div class='modal' role='dialog' aria-labelledby='modal-label' aria-hidden='true'>" + "<div class='modal-header'><button type=\"button\" class=\"close\" data-dismiss=\"modal\" >×</button><h3 align='center'>" + model.get('title') + "</h3></div>" + "<div class='modal-body'><table class='table'><tr><td><h5>Text</h5></td><td>" + model.get('text') + "</td></tr></table></div><div class='modal-footer'><button class='btn' data-dismiss='modal'>Close</button></div></div>");
+    this.el.append(Templates.dish_view(model));
     this.showModal();
 
   },
   edit : function(e) {
     var id = $(e.currentTarget).data("id");
     console.log("edit event triggered - " + id);
-    var page = this.collection.get(id);
-    page.schema = {
+    var dish = this.collection.get(id);
+    dish.schema = {
       section : {
         type : 'Text'
       },
@@ -68,25 +68,56 @@ var DishListView = Backbone.View.extend({
 
     };
     var form = new Backbone.Form({
-      model : page
+      model : dish
     }).render();
-    this.el.append("<div class='modal' role='dialog' aria-labelledby='modal-label' aria-hidden='true'>" 
-    + "<div class='modal-header'><button type=\"button\" class=\"close\" data-dismiss=\"modal\" >×</button><h3 align='center'>" + page.get('title') 
-    + "</h3></div>" + "<div class='modal-body'></div><div class='modal-footer'> <button id='page-save' class='btn btn-primary'>Save changes</button><button class='btn' data-dismiss='modal'>Cancel</button></div></div>");
+    this.el.append(Templates.dish_edit(dish));
     $('.modal-body').append(form.el);
     this.showModal();
-    $('#page-save').click(function(e){
+    $('#dish-save').click(function(e){
       form.commit();
       $('.modal').remove();
       $('.modal-backdrop').remove();
-      page.save();
+      dish.save();
+    });
+  },
+  
+  new_dish : function(e) {
+    var id = $(e.currentTarget).data("id");
+    console.log("edit event triggered - " + id);
+    var dish = new Dish();
+    dish.schema = {
+      section : {
+        type : 'Text'
+      },
+      title : {
+        type : 'Text',
+        validators : ['required']
+      },
+      text : {
+        type : 'TextArea',
+        validators : ['required']
+      }
+
+    };
+    var form = new Backbone.Form({
+      model : dish
+    }).render();
+    this.el.append(Templates.dish_edit(dish));
+    $('.modal-body').append(form.el);
+    this.showModal();
+    $('#dish-save').click(function(e){
+      form.commit();
+      $('.modal').remove();
+      $('.modal-backdrop').remove();
+      dish.save();
+      this.collection.add(dish);
     });
   },
 
   render : function() {
 
     var self = this;
-    this.el.html("<h1>List of Pages</h1><table id=\"pages\" class=\"table\"><thead><tr><th>ID</th><th>Title</th><th></th></thead></table>");
+    this.el.html("<h1>List of Dishes</h1><table id=\"dishes\" class=\"table\"><thead><tr><th>ID</th><th>Title</th><th></th></thead></table>");
     this.collection.each(function(model) {
       self.addOne(model);
     });
@@ -97,7 +128,7 @@ var DishListView = Backbone.View.extend({
       model : the_model
     });
 
-    $('#pages').append(view.render().$el.html());
+    $('#dishes').append(view.render().$el.html());
 
   }
 });
