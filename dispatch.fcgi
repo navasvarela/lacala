@@ -1,5 +1,5 @@
 #!/home2/salatecs/.rvm/rubies/ruby-1.9.3-p194/bin/ruby
-
+#
 require 'rubygems'
 
 fastcgi_log = File.open("fastcgi.log", "a")
