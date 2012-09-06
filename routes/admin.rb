@@ -2,18 +2,24 @@ def admin_haml(template, options={})
   haml(template, options.merge(:layout => :'admin/layout'))
 end
 
+before '/admin/*' do
+  protected!
+end
 get '/admin/?' do
+ 
   css :app
   admin_haml :'admin/list'
 end
 
 get '/admin/pages' do
+ 
   @pages = Page.all
 
   @pages.to_json
 end
 
 put '/admin/pages/:id' do
+ 
   payload = request.body.read
   logger.info "Received JSON for #{params[:id]}: #{payload}"
   page = Page[params[:id]]
