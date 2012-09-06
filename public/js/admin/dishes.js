@@ -1,6 +1,6 @@
 var Dish = Backbone.Model.extend({
-  initialize: function() {}
-  
+  initialize: function() {},
+  url : '/admin/dishes'
 });
 
 var DishList = Backbone.Collection.extend({
@@ -21,7 +21,9 @@ var DishListView = Backbone.View.extend({
     this.collection = new DishList();
     this.collection.bind("reset", this.render, this);
     this.collection.bind("change", this.render, this);
-    this.el = options.el;
+    if (options && options.el) {
+      this.el = options.el;
+    }
     var self = this;
     this.collection.fetch({
       success : function() {
@@ -32,7 +34,9 @@ var DishListView = Backbone.View.extend({
   },
   events : {
     "click .view-button" : "view",
-    "click .edit-button" : "edit"
+    "click .edit-button" : "edit",
+    "click .new-button"  : "new_dish"
+    
   },
   showModal : function() {
     $('.modal').modal('show');
@@ -84,7 +88,7 @@ var DishListView = Backbone.View.extend({
   new_dish : function(e) {
     var id = $(e.currentTarget).data("id");
     console.log("edit event triggered - " + id);
-    var dish = new Dish();
+    var dish = new Dish({title: "New Dish"});
     dish.schema = {
       section : {
         type : 'Text'
@@ -105,22 +109,24 @@ var DishListView = Backbone.View.extend({
     this.el.append(Templates.dish_edit(dish));
     $('.modal-body').append(form.el);
     this.showModal();
+    var collection = this.collection;
     $('#dish-save').click(function(e){
       form.commit();
       $('.modal').remove();
       $('.modal-backdrop').remove();
       dish.save();
-      this.collection.add(dish);
+      collection.fetch();
     });
   },
 
   render : function() {
 
     var self = this;
-    this.el.html("<h1>List of Dishes</h1><table id=\"dishes\" class=\"table\"><thead><tr><th>ID</th><th>Title</th><th></th></thead></table>");
+    this.$el.html("<h1>List of Dishes</h1><table id=\"dishes\" class=\"table\"><thead><tr><th>ID</th><th>Title</th><th></th></thead></table>");
     this.collection.each(function(model) {
       self.addOne(model);
     });
+    $('#dishes').append("<p align'right'><button class='btn btn-small btn-primary new-button' type='button'>New Dish</button></p>");
 
   },
   addOne : function(the_model) {

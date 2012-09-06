@@ -22,7 +22,9 @@ var PageListView = Backbone.View.extend({
     this.collection = new PageList();
     this.collection.bind("reset", this.render, this);
     this.collection.bind("change", this.render, this);
-    this.el = options.el;
+    if (options && options.el) {
+      this.el = options.el;
+    }
     var self = this;
     this.collection.fetch({
       success : function() {
@@ -87,7 +89,7 @@ var PageListView = Backbone.View.extend({
   render : function() {
 
     var self = this;
-    this.el.html("<h1>List of Pages</h1><table id=\"pages\" class=\"table\"><thead><tr><th>ID</th><th>Title</th><th></th></thead></table>");
+    this.$el.html("<h1>List of Pages</h1><table id=\"pages\" class=\"table\"><thead><tr><th>ID</th><th>Title</th><th></th></thead></table>");
     this.collection.each(function(model) {
       self.addOne(model);
     });

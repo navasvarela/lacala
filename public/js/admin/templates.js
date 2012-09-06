@@ -13,7 +13,11 @@ var Templates = {
     return this.tmpl_cache.dish_tmpl;
   },
   dish_view : function(model) {
-    var tmpl = "<div class='modal' role='dialog' aria-labelledby='modal-label' aria-hidden='true'>" + "<div class='modal-header'><button type=\"button\" class=\"close\" data-dismiss=\"modal\" >×</button>" + "<h3 align='center'>{{title}}</h3></div>" + "<div class='modal-body'><table class='table'><tr><td>Short Desc:</td><td>{{short_desc}}</td></tr><tr><td><h5>Text</h5></td><td>{{text}}" + "</td></tr></table></div><div class='modal-footer'><button class='btn' data-dismiss='modal'>Close</button></div></div>";
+    var tmpl = "<div class='modal' role='dialog' aria-labelledby='modal-label' aria-hidden='true'>" 
+    + "<div class='modal-header'><button type=\"button\" class=\"close\" data-dismiss=\"modal\" >×</button>" 
+    + "<h3 align='center'>{{title}}</h3></div>" 
+    + "<div class='modal-body'><table class='table'><tr><td>Short Desc:</td><td>{{short_desc}}</td></tr><tr><td><h5>Text</h5></td><td>{{text}}" 
+    + "</td></tr></table></div><div class='modal-footer'><button class='btn' data-dismiss='modal'>Close</button></div></div>";
     if (!this.tmpl_cache.dish_view_tmpl) {
       this.tmpl_cache.dish_view_tmpl = Handlebars.compile(tmpl);
     }
@@ -24,7 +28,10 @@ var Templates = {
     });
   },
   dish_edit : function(model) {
-    var tmpl = "<div class='modal' role='dialog' aria-labelledby='modal-label' aria-hidden='true'>" + "<div class='modal-header'><button type=\"button\" class=\"close\" data-dismiss=\"modal\" >×</button>" + "<h3 align='center'>{{title}}</h3></div><div class='modal-body'></div><div class='modal-footer'>" + "<button id='dish-save' class='btn btn-primary'>Save changes</button><button class='btn' data-dismiss='modal'>Cancel</button></div></div>";
+    var tmpl = "<div class='modal' role='dialog' aria-labelledby='modal-label' aria-hidden='true'>" 
+    + "<div class='modal-header'><button type=\"button\" class=\"close\" data-dismiss=\"modal\" >×</button>" 
+    + "<h3 align='center'>{{title}}</h3></div><div class='modal-body'></div><div class='modal-footer'>" 
+    + "<button id='dish-save' class='btn btn-primary'>Save changes</button><button class='btn' data-dismiss='modal'>Cancel</button></div></div>";
     if (!this.tmpl_cache.dish_edit_tmpl) {
       this.tmpl_cache.dish_edit_tmpl = Handlebars.compile(tmpl);
     }

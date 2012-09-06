@@ -4,12 +4,21 @@ var AppRouter = Backbone.Router.extend({
     "menus" : "getMenus",
     "dishes" : "getDishes"
   },
+  
+  pages: null,
+  dishes: null,
 
   getPages : function() {
-    new PageListView({ el: $("#content")});
+    if (this.dishes) {
+      this.dishes.undelegateEvents();
+    }
+    this.pages = new PageListView({ el: $("#content")});
   },
   getDishes: function() {
-    new DishListView({ el: $("#content")});
+    if (this.pages) {
+      this.pages.undelegateEvents();
+    }
+    this.dishes = new DishListView({ el: $("#content")});
   }
   
   
@@ -20,8 +29,9 @@ $(document).ready(function(){
     $('#menu li').removeClass("active");
     $(this).addClass("active");
   });
-  new AppRouter();
+  var app = new AppRouter();
   Backbone.history.start();
+  app.navigate('pages',{trigger:true});
 });
 
 
