@@ -40,22 +40,19 @@ assets {
     '/bootstrap/js/bootstrap.min.js',
     '/js/lib/handlebars.js','/js/templates.js']
 
-  js :app, '/js/app.js', base_libs.concat([
-      '/js/*.js'
-    ])
+  js :app, '/js/app.js', base_libs
 
   css :app, '/css/app.css', [
       '/css/styles.css'
     ]
-  js :admin, '/js/admin.js', base_libs.concat([
-
+  js :admin, '/js/admin.js', base_libs + [
       '/js/admin/*.js'
-    ])
+  ]
 
   css :admin, '/css/adm.css', [
       '/css/admin.css',
       '/bootstrap/css/bootstrap.min.css'
-    ]
+  ]
 
 }
 
