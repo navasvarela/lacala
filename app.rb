@@ -37,6 +37,7 @@ assets {
     '/js/lib/underscore.js',
     '/js/lib/backbone.js',
     '/js/lib/backbone-forms.js',
+    '/js/lib/list.js',
     '/bootstrap/js/bootstrap.min.js',
     '/js/lib/handlebars.js','/js/templates.js']
 
